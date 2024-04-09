@@ -1,17 +1,20 @@
-# making shift cipher encryption and decryption using python
+# making autokey cipher cipher encryption and decryption using python
 
 import sys
+
 domain = 26
 string = "abcdefghijklmnopqrstuvwxyz"
 
+# this is the encryption part
 def encryption(userInput, key, domain, string):
     
     cipher = ""
+    # making the value of key 
     for i in range(len(key)):
         for j in range(len(string)):
             if string[j] == key[i]:
                 k = j
-
+    # using the value of key making the cipher
     for i in range(len(userInput)):
         for j in range(len(string)):
             if string[j] == userInput[i]:
@@ -22,6 +25,11 @@ def encryption(userInput, key, domain, string):
     print(f"The encrypted message is: {cipher}")
     print('\n')
 
+# the decryption part will be added here
+
+
+
+# choice the what you need to do (encrypt/decrypt)
 while(True):
     print("Enter your choice(Number): ")
     print("1. Encryption: ")
@@ -40,7 +48,7 @@ while(True):
             userInput = input("Enter your text to decrypt: ")
             key = input("Enter the key: ")
             userInput = userInput.lower()
-            decryption(userInput, key, domain, string)
+            # decryption(userInput, key, domain, string)
         elif number == 3:
             sys.exit()
         else:
