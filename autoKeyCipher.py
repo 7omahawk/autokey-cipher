@@ -1,6 +1,21 @@
 # making autokey cipher cipher encryption and decryption using python
 
 import sys
+import os
+
+
+design = """
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++     _         _                              ___ _       _                +
++    /_\  _   _| |_ ___     /\ /\___ _   _    / __(_)_ __ | |__   ___ _ __  +
++   //_\\| | | | __/ _ \   / //_/ _ \ | | |  / /  | | '_ \| '_ \ / _ \ '__| +
++  /  _  \ |_| | || (_) | / __ \  __/ |_| | / /___| | |_) | | | |  __/ |    + 
++  \_/ \_/\__,_|\__\___/  \/  \/\___|\__, | \____/|_| .__/|_| |_|\___|_|    +
++                                  |___/          |_|                       +
++                                                           -By 7omahawk    +
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+"""
+
 
 domain = 26
 string = "abcdefghijklmnopqrstuvwxyz"
@@ -50,6 +65,7 @@ def decryption(userInput, key, domain, string):
 
 # choice the what you need to do (encrypt/decrypt)
 while(True):
+    print(design)
     print("Enter your choice(Number): ")
     print("1. Encryption: ")
     print("2. Decryption: ")
@@ -59,13 +75,13 @@ while(True):
 
     def choice(number):
         if number == 1:
-            userInput = input("Enter your text to encrypt: ")
-            key = input("Enter the key: ")
+            userInput = input("Enter your text to encrypt (A-Z): ")
+            key = input("Enter the key (any alphabet, ex: m): ")
             userInput = userInput.lower()
             encryption(userInput, key, domain, string)
         elif number == 2:
-            userInput = input("Enter your text to decrypt: ")
-            key = input("Enter the key: ")
+            userInput = input("Enter your text to decrypt (A-Z): ")
+            key = input("Enter the key (any alphabet, ex: m): ")
             userInput = userInput.lower()
             decryption(userInput, key, domain, string)
         elif number == 3:
@@ -74,3 +90,6 @@ while(True):
             print("Input should be a number from 1 to 3")
 
     choice(number) 
+
+    input()             # press enter to clear screen
+    os.system('clear')  # clear screen
